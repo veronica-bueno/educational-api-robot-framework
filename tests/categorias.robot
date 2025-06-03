@@ -12,4 +12,5 @@ Categorias
     Excluir categoria cadastrada
     Listar todas as categorias cadastradas
     Cadastrar categoria sem nome
+    Buscar categoria não cadastrada
     

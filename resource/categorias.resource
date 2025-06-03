@@ -8,7 +8,6 @@ Resource   ../config/config.resource
 *** Variables ***
 ${CATEGORIES_ENDPOINT}    /categories
 
-
 *** Keywords ***
 Cadastrar uma nova categoria
     Criar Sessão da API
@@ -89,6 +88,27 @@ Listar todas as categorias cadastradas
 
     Log    Categorias cadastradas: ${DATA}
 
+Obter ID de uma categoria existente
+    [Documentation]    Busca e retorna o ID de uma categoria existente.
+    Criar Sessão da API
+    ${RESPONSE}=    GET    ${URL_API}/categories    expected_status=200
+
+    ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
+    Dictionary Should Contain Key    ${RESPONSE_BODY}    data
+    ${CATEGORIES_LIST}=    Get From Dictionary    ${RESPONSE_BODY}    data
+
+    # Verificar se a lista de categorias não está vazia
+    Should Not Be Empty    ${CATEGORIES_LIST}    msg=Nenhuma categoria encontrada para obter ID.
+
+    # Pegar a primeira categoria da lista
+    ${PRIMEIRA_CATEGORIA}=    Get From List    ${CATEGORIES_LIST}    0
+
+    # Extrair o ID da primeira categoria
+    ${ID_PRIMEIRA_CATEGORIA}=    Get From Dictionary    ${PRIMEIRA_CATEGORIA}    _id
+    Log    ID da categoria encontrada: ${ID_PRIMEIRA_CATEGORIA}
+
+    RETURN    ${ID_PRIMEIRA_CATEGORIA}
+
 Cadastrar categoria sem nome
     Criar Sessão da API
     ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD}/categorias.json    # Carrega meu payload
@@ -111,5 +131,19 @@ Cadastrar categoria sem nome
         Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e descrição.
     END
 
+Buscar categoria não cadastrada
+    Criar Sessão da API
 
+    ${ID_CATEGORIA_ALEATORIA}    Generate Random String    length=10    chars=[NUMBERS]
+
+    Log    ${ID_CATEGORIA_ALEATORIA} 
+    ${RESPONSE}=    GET    ${URL_API}/categories/${ID_CATEGORIA_ALEATORIA}  expected_status=404
+
+    IF    ${RESPONSE.status_code} == 404
+        ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
+        Log    ${RESPONSE_BODY}
+        Dictionary Should Contain Key    ${RESPONSE_BODY}    message
+        ${MESSAGE}=    Get From Dictionary    ${RESPONSE_BODY}    message
+        Should Be Equal    ${MESSAGE}    Categoria não encontrada.
+    END
 

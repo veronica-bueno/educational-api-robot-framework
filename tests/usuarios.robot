@@ -11,3 +11,4 @@ Usuários
     Excluir usuário cadastrado
     Listar todos os usuarios cadastrados
     Cadastrar usuário sem nome
+    Buscar usuário não cadastrado
