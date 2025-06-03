@@ -13,7 +13,7 @@ ${USERS_ENDPOINT}    /users
 Cadastrar um novo usuário
     # Cria a sessão
     Criar Sessão da API
-    ${JSON_USUARIOS}=    Load Json From File    ${PATH_PAYLOAD_USUARIOS}/usuarios.json    # Carrega meu payload
+    ${JSON_USUARIOS}=    Load Json From File    ${PATH_PAYLOAD}/usuarios.json    # Carrega meu payload
   
     ${PALAVRA_ALEATORIA}    Generate Random String    length=6    chars=[LETTERS]
     ${PALAVRA_ALEATORIA}    Convert To Lower Case    ${PALAVRA_ALEATORIA}
@@ -103,7 +103,7 @@ Listar todos os usuarios cadastrados
     # Should Contain    ${error_message}    nome    msg=Por favor, preencha todos os campos obrigatórios: nome e email.
 
     # Create Session    API    ${URL_API}    verify=${SSL_VERIFY}   # Verify=false para ignorar a validação SSL
-    # ${JSON_USUARIOS}=    Load Json From File    ${PATH_PAYLOAD_USUARIOS}/usuarios.json    # Carrega meu payload
+    # ${JSON_USUARIOS}=    Load Json From File    ${PATH_PAYLOAD}/usuarios.json    # Carrega meu payload
   
     # ${PALAVRA_ALEATORIA}    Generate Random String    length=6    chars=[LETTERS]
     # ${PALAVRA_ALEATORIA}    Convert To Lower Case    ${PALAVRA_ALEATORIA}

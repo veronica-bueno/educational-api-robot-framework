@@ -12,7 +12,7 @@ ${CATEGORIES_ENDPOINT}    /categories
 *** Keywords ***
 Cadastrar uma nova categoria
     Criar Sessão da API
-    ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD_CATEGORIAS}/categorias.json    # Carrega meu payload
+    ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD}/categorias.json    # Carrega meu payload
   
     ${PALAVRA_ALEATORIA}    Generate Random String    length=10    chars=[LETTERS]
     ${PALAVRA_ALEATORIA}    Convert To Lower Case    ${PALAVRA_ALEATORIA}
@@ -50,7 +50,7 @@ Buscar categoria cadastrada por ID
 
 Atualizar categoria cadastrada
     Criar Sessão da API
-    ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD_CATEGORIAS}/categorias.json 
+    ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD}/categorias.json 
     Remove From Dictionary    ${JSON_CATEGORIAS}    name
     Set To Dictionary    ${JSON_CATEGORIAS}    description=teste
     ${RESPONSE}=    PUT    ${URL_API}/categories/${ID_CATEGORIA}    json=${JSON_CATEGORIAS}    expected_status=200
