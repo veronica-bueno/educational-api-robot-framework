@@ -89,3 +89,27 @@ Listar todas as categorias cadastradas
 
     Log    Categorias cadastradas: ${DATA}
 
+Cadastrar categoria sem nome
+    Criar Sessão da API
+    ${JSON_CATEGORIAS}=    Load Json From File    ${PATH_PAYLOAD}/categorias.json    # Carrega meu payload
+  
+    ${PALAVRA_ALEATORIA}    Generate Random String    length=10    chars=[LETTERS]
+    ${PALAVRA_ALEATORIA}    Convert To Lower Case    ${PALAVRA_ALEATORIA}
+   
+    Set To Dictionary    ${JSON_CATEGORIAS}    description=${PALAVRA_ALEATORIA}
+    Log    Json enviado: ${JSON_CATEGORIAS}
+
+    ${RESPONSE}=    POST On Session    API    ${CATEGORIES_ENDPOINT}    json=${JSON_CATEGORIAS}    expected_status=400
+    Log    Status code: ${RESPONSE.status_code}
+    Log    Response content: ${RESPONSE.content}
+  
+    IF    ${RESPONSE.status_code} == 400
+        ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
+        Log    ${RESPONSE_BODY}
+        Dictionary Should Contain Key    ${RESPONSE_BODY}    message
+        ${MESSAGE}=    Get From Dictionary    ${RESPONSE_BODY}    message
+        Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e descrição.
+    END
+
+
+

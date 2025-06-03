@@ -80,7 +80,28 @@ Listar todos os usuarios cadastrados
     
 
 
-# Cadastrar usuário sem nome
+Cadastrar usuário sem nome
+    Criar Sessão da API
+    ${JSON_USUARIOS}=    Load Json From File    ${PATH_PAYLOAD}/usuarios.json    # Carrega meu payload
+  
+    ${PALAVRA_ALEATORIA}    Generate Random String    length=6    chars=[LETTERS]
+    ${PALAVRA_ALEATORIA}    Convert To Lower Case    ${PALAVRA_ALEATORIA}
+   
+    Set To Dictionary    ${JSON_USUARIOS}    email=${PALAVRA_ALEATORIA}@emailteste.com
+    Log    Json enviado: ${JSON_USUARIOS}
+
+    ${RESPONSE}=    POST On Session    API    ${USERS_ENDPOINT}    json=${JSON_USUARIOS}    expected_status=400
+    Log    Status code: ${RESPONSE.status_code}
+    Log    Response content: ${RESPONSE.content}
+  
+    IF    ${RESPONSE.status_code} == 400
+        ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
+        Log    ${RESPONSE_BODY}
+        Dictionary Should Contain Key    ${RESPONSE_BODY}    message
+        ${MESSAGE}=    Get From Dictionary    ${RESPONSE_BODY}    message
+        Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e email.
+    END
+
 #     # Criamos um payload sem o campo 'name'
 #     Create Session    API    ${URL_API}    verify=true 
 #     ${random_email}=    Generate Random String    length=10    chars=[LETTERS][DIGITS]

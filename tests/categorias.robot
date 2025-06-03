@@ -11,4 +11,5 @@ Categorias
     Atualizar categoria cadastrada
     Excluir categoria cadastrada
     Listar todas as categorias cadastradas
+    Cadastrar categoria sem nome
     
