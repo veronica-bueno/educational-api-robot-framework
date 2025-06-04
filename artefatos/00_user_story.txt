@@ -1,0 +1,175 @@
+### User Story ###
+
+- Categorias
+- Produtos 
+- Usuários
+
+🏷️ Categorias
+    ### User Story 1: Cadastro de uma nova categoria ###
+        Como administrador, 
+        eu quero cadastrar uma nova categoria de produto 
+        para que os produtos possam ser organizados.
+
+        Critérios de Aceitação:
+        - Ao realizar uma requisição POST para /categories com um payload JSON válido (contendo os campos name e description), a API deve retornar o status code 201 Created.
+        - A resposta deve conter o objeto da categoria criada, incluindo um _id gerado pela API.
+        - Ao tentar cadastrar uma categoria sem o campo name no payload, a API deve retornar o status code 400 Bad Request e uma mensagem indicando a ausência do campo: {"message": "Por favor, preencha todos os campos obrigatórios: nome e descrição."}.
+
+    ### User Story 2: Listagem de todas as categorias ###
+        Como usuário, 
+        eu quero listar todas as categorias de produtos 
+        para que eu possa navegar pelos diferentes tipos de produtos.
+
+        Critérios de Aceitação:
+        - Ao realizar uma requisição GET para /categories, a API deve retornar o status code 200 OK.
+        - A resposta deve conter um array JSON na chave data com a lista de categorias.
+        - Cada objeto de categoria no array deve conter os campos relevantes, como _id e name.
+
+    ### User Story 3: Busca de categoria por ID ###
+        Como usuário, 
+        eu quero buscar uma categoria específica pelo seu ID 
+        para que eu possa obter detalhes sobre ela.
+
+        Critérios de Aceitação:
+        - Dado um ID de categoria existente, ao realizar uma requisição GET para /categories/{id}, a API deve retornar o status code 200 OK.
+        - A resposta deve conter um objeto JSON com os detalhes da categoria solicitada na chave data.
+        - Dado um ID de categoria inexistente, ao realizar uma requisição GET para /categories/{id}, a API deve retornar o status code 404 Not Found.
+        - Para um ID inexistente, o corpo da resposta deve conter uma mensagem de erro informativa: {"message": "Categoria não encontrada."}.
+
+    ### User Story 4: Atualização de uma categoria existente ###
+        Como administrador, 
+        eu quero atualizar a descrição de uma categoria existente 
+        para que a descrição esteja sempre atualizada.
+        
+        Critérios de Aceitação:
+        - Dado um ID de categoria existente, ao realizar uma requisição PUT para /categories/{id} com um payload JSON válido (contendo o campo description), a API deve retornar o status code 200 OK.
+        - A resposta deve conter o objeto da categoria com a descrição atualizada na chave data.
+        - Observação: Se o campo name for omitido no payload, a atualização da description ainda deve ser bem-sucedida com 200 OK, conforme o teste.
+        - Observação: Não há um teste explícito para PUT com ID de categoria inexistente (404 Not Found).
+
+    ### User Story 5: Exclusão de uma categoria ###
+        Como administrador, 
+        eu quero excluir uma categoria existente 
+        para que ela não seja mais utilizada para classificar produtos.
+
+        Critérios de Aceitação:
+        - Dado um ID de categoria existente, ao realizar uma requisição DELETE para /categories/{id}, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter uma mensagem de sucesso: {"message": "Categoria removida com sucesso", "success": true}.
+        - Observação: Não há um teste explícito para DELETE com ID de categoria inexistente (404 Not Found).
+
+
+🛍️ Produtos
+    ### User Story 6: Listagem de todos os produtos ###
+        Como um cliente, 
+        eu quero listar todos os produtos disponíveis 
+        para que eu possa ver o catálogo completo da loja.
+
+        Critérios de Aceitação:
+        - Ao realizar uma requisição GET para /products, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter um array JSON na chave data com a lista de produtos.
+        - Cada objeto de produto no array deve conter os campos: _id (string), name (string), price (número), description (string), quantity (inteiro) e category (string - ID da categoria).
+        - Se não houver produtos cadastrados, a API deve retornar um array vazio ([]) na chave data com status 200 OK.
+
+    ### User Story 7: Busca de produto por ID ###
+        Como um cliente, 
+        eu quero buscar um produto específico pelo seu ID 
+        para que eu possa ver seus detalhes.
+
+        Critérios de Aceitação:
+        - Dado um ID de produto existente, ao realizar uma requisição GET para /products/{id}, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter um objeto JSON na chave data com os detalhes completos do produto solicitado correspondente ao {id} pesquisado.
+        - Dado um ID de produto inexistente, ao realizar uma requisição GET para /products/{id}, a API deve retornar o status code 404 Not Found.
+        - Para um ID inexistente, o corpo da resposta deve conter a mensagem de erro: {"message": "Produto não encontrado."}.
+
+    ### User Story 8: Cadastro de um novo produto ###
+        Como administrador, 
+        eu quero cadastrar um novo produto no sistema 
+        para que ele fique disponível no catálogo de vendas.
+
+        Critérios de Aceitação:
+        - Ao realizar uma requisição POST para /products com um payload JSON válido (contendo name, price, description, quantity e category), a API deve retornar o status code 201 Created.
+        - O corpo da resposta deve conter o objeto do produto recém-criado na chave data, incluindo o _id gerado pelo sistema.
+        - Ao tentar cadastrar um produto com um ou mais campos obrigatórios faltando no payload (ex: price ou quantity), a API deve retornar o status code 400 Bad Request.
+        - Para campos obrigatórios ausentes, o corpo da resposta deve conter a mensagem: {"message": "Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria."}.
+        
+
+    ### User Story 9: Atualização de um produto existente ###
+        Como administrador, 
+        eu quero atualizar as informações de um produto existente 
+        para que os dados do catálogo se mantenham corretos.
+
+        Critérios de Aceitação:
+        - Dado um ID de produto existente, ao realizar uma requisição PUT para /products/{id} com um payload JSON válido (permitindo atualização parcial de campos como description e quantity), a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter o objeto do produto na chave data com as informações atualizadas.
+        - Dado um ID de produto inexistente, ao realizar uma requisição PUT para /products/{id}, a API deve retornar o status code 404 Not Found.
+    
+
+    ### User Story 10: Exclusão de um produto ###
+        Como administrador, 
+        eu quero excluir um produto do sistema 
+        para que ele não esteja mais disponível para venda.
+
+        Critérios de Aceitação:
+        - Dado um ID de produto existente, ao realizar uma requisição DELETE para /products/{id}, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter a mensagem de confirmação: {"message": "Produto removido com sucesso.", "success": true}.
+        - Dado um ID de produto inexistente, ao realizar uma requisição DELETE para /products/{id}, a API deve retornar o status code 404 Not Found.
+        - Para um ID inexistente, o corpo da resposta deve conter a mensagem de erro: {"message": "Produto não encontrado para exclusão."}.
+
+    ### User Story 11: Listagem de produtos por categoria ###
+        Como um cliente, 
+        eu quero listar todos os produtos de uma categoria específica 
+        para que eu possa encontrar itens semelhantes mais facilmente.
+
+        Critérios de Aceitação:
+        - Dado um ID de categoria existente, ao realizar uma requisição GET para /products/category/{categoriaId}, a API deve retornar 200 OK.
+        - O corpo da resposta deve conter um array JSON na chave data com a lista de produtos pertencentes a essa categoria.
+        - Dado um ID de categoria inexistente, ao realizar uma requisição GET para /products/category/{categoriaId}, a API deve retornar 404 Not Found.
+        - Para um ID de categoria inexistente, o corpo da resposta deve conter a mensagem de erro: {"message": "Categoria não encontrada."}.
+        - Dado um ID de categoria que existe mas não possui produtos associados, a API deve retornar 200 OK e um array vazio ([]) na chave data.
+
+👤 Usuários
+    ### User Story 12: Cadastro de um novo usuário ###
+        Como administrador, 
+        eu quero cadastrar um novo usuário no sistema 
+        para que ele possa acessar as funcionalidades permitidas.
+        
+        Critérios de Aceitação:
+        - Ao realizar uma requisição POST para /users com um payload JSON válido (contendo os campos name e email), a API deve retornar o status code 201 Created.
+        - O corpo da resposta deve conter o objeto do usuário recém-criado na chave data, incluindo um _id gerado pelo sistema.
+        - Ao tentar cadastrar um usuário com um payload JSON incompleto (faltando campos obrigatórios como name ou email), a API deve retornar o status code 400 Bad Request.
+        - Para campos obrigatórios ausentes, o corpo da resposta deve conter a mensagem: {"message": "Por favor, preencha todos os campos obrigatórios: nome e email."}.
+    
+    ### User Story 13: Listagem de todos os usuários ###
+        Como administrador, 
+        eu quero listar todos os usuários cadastrados no sistema 
+        para que eu possa ter uma visão geral dos acessos.
+        
+        Critérios de Aceitação:
+        - Ao realizar uma requisição GET para /users, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter um array JSON na chave data com a lista de usuários.
+        - Cada objeto de usuário no array deve conter os campos: _id (string), name (string) e email (string).
+        - Se não houver usuários cadastrados, a API deve retornar um array vazio ([]) na chave data com status 200 OK.
+
+    ### User Story 14: Busca de usuário por ID
+        Como administrador, 
+        eu quero buscar um usuário específico pelo seu ID 
+        para que eu possa verificar ou gerenciar seus detalhes.
+        
+        Critérios de Aceitação:
+        - Dado um ID de usuário existente, ao realizar uma requisição GET para /users/{id}, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter um objeto JSON na chave data com os detalhes completos do usuário solicitado.
+        - Dado um ID de usuário inexistente, ao realizar uma requisição GET para /users/{id}, a API deve retornar o status code 404 Not Found.
+        - Para um ID inexistente, o corpo da resposta deve conter a mensagem de erro informativa: {"message": "Usuário não encontrado."}.
+
+    ### User Story 15: Exclusão de um usuário ###
+        Como administrador, 
+        eu quero excluir um usuário do sistema 
+        para que ele perca o acesso.
+
+        Critérios de Aceitação:
+        - Dado um ID de usuário existente, ao realizar uma requisição DELETE para /users/{id}, a API deve retornar o status code 200 OK.
+        - O corpo da resposta deve conter a mensagem de sucesso: {"message": "Usuário removido com sucesso.", "success": true}.
+        - Dado um ID de usuário inexistente, ao realizar uma requisição DELETE para /users/{id}, a API deve retornar o status code 404 Not Found.
+        - Para um ID inexistente, o corpo da resposta deve conter a mensagem de erro: {"message": "Usuário não encontrado para exclusão."}.
+
+

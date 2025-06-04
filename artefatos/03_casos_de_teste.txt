@@ -1,0 +1,160 @@
+### Test Case ###
+
+Casos de Testes em Gherkin/PT
+
+🏷️ Categorias
+
+  Cenário: Cadastrar uma Nova Categoria (Cenário de Sucesso)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição POST é enviada para "/categories" com um payload JSON válido contendo nome e descrição
+    Então a API deve retornar o status code 201 Created
+    E o corpo da resposta deve conter o objeto da categoria criada, incluindo um "_id" gerado pela API
+
+  Cenário: Cadastrar Categoria sem Nome (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição POST é enviada para "/categories"
+    E o payload JSON não contém o campo "name"
+    Então a API deve retornar o status code 400 Bad Request
+    E o corpo da resposta deve conter a mensagem: "Por favor, preencha todos os campos obrigatórios: nome e descrição."
+
+  Cenário: Buscar Categoria Cadastrada por ID (Cenário de Sucesso)
+    Dado que uma categoria existe com um ID conhecido
+    Quando uma requisição GET é enviada para "/categories/{id}" usando o ID da categoria existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter o objeto JSON com os detalhes da categoria solicitada
+
+  Cenário: Buscar Categoria Não Cadastrada (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição GET é enviada para "/categories/{id}" com um ID de categoria que não existe
+    Então a API deve retornar o status code 404 Not Found
+    E o corpo da resposta deve conter a mensagem: "Categoria não encontrada."
+
+  Cenário: Atualizar Categoria Cadastrada
+    Dado que uma categoria existe com um ID conhecido
+    Quando uma requisição PUT é enviada para "/categories/{id}" usando o ID da categoria existente
+    E o payload JSON contém a "description" atualizada (sem o campo "name")
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter o objeto da categoria com a descrição atualizada
+
+  Cenário: Excluir Categoria Cadastrada
+    Dado que uma categoria existe com um ID conhecido
+    Quando uma requisição DELETE é enviada para "/categories/{id}" usando o ID da categoria existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter a mensagem: "Categoria removida com sucesso"
+    E o campo "success" no corpo da resposta deve ser "true"
+
+  Cenário: Listar Todas as Categorias Cadastradas
+    Dado que o sistema contém categorias cadastradas
+    Quando uma requisição GET é enviada para "/categories"
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter um array JSON com a lista de categorias
+    E cada objeto de categoria no array deve conter os campos "_id" e "name"
+
+🛍️ Produtos
+
+  Cenário: Cadastrar um Novo Produto (Cenário de Sucesso)
+    Dado que o sistema está pronto para receber requisições de API
+    E uma categoria existente está disponível
+    Quando uma requisição POST é enviada para "/products" com um payload JSON válido contendo nome, preço, descrição, quantidade e o ID da categoria
+    Então a API deve retornar o status code 201 Created
+    E o corpo da resposta deve conter o objeto do produto recém-criado, incluindo um "_id" gerado pela API
+
+  Cenário: Cadastrar Produto sem Campos Obrigatórios (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição POST é enviada para "/products"
+    E o payload JSON não contém campos obrigatórios como "price" ou "quantity"
+    Então a API deve retornar o status code 400 Bad Request
+    E o corpo da resposta deve conter a mensagem: "Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria."
+
+  Cenário: Buscar Produto Cadastrado por ID (Cenário de Sucesso)
+    Dado que um produto existe com um ID conhecido
+    Quando uma requisição GET é enviada para "/products/{id}" usando o ID do produto existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter o objeto JSON com os detalhes completos do produto solicitado
+
+  Cenário: Buscar Produto Não Cadastrado (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição GET é enviada para "/products/{id}" com um ID de produto que não existe
+    Então a API deve retornar o status code 404 Not Found
+    E o corpo da resposta deve conter a mensagem: "Produto não encontrado."
+
+  Cenário: Atualizar Produto Cadastrado
+    Dado que um produto existe com um ID conhecido
+    Quando uma requisição PUT é enviada para "/products/{id}" usando o ID do produto existente
+    E o payload JSON contém informações atualizadas (ex: descrição e quantidade)
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter o objeto do produto com as informações atualizadas
+
+  Cenário: Excluir Produto Cadastrado
+    Dado que um produto existe com um ID conhecido
+    Quando uma requisição DELETE é enviada para "/products/{id}" usando o ID do produto existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter a mensagem: "Produto removido com sucesso."
+    E o campo "success" no corpo da resposta deve ser "true"
+
+  Cenário: Listar Todos os Produtos Cadastrados
+    Dado que o sistema contém produtos cadastrados
+    Quando uma requisição GET é enviada para "/products"
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter um array JSON com a lista de produtos
+    E cada objeto de produto no array deve conter os campos "_id", "name", "price", "description", "quantity" e "category"
+
+  Cenário: Listar Produtos por ID de Categoria (Cenário de Sucesso)
+    Dado que uma categoria existe com um ID conhecido e possui produtos associados
+    Quando uma requisição GET é enviada para "/products/category/{categoriaId}" usando o ID da categoria existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter um array JSON com a lista de produtos pertencentes a essa categoria
+
+  Cenário: Listar Produtos de Categoria Inexistente (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição GET é enviada para "/products/category/{categoriaId}" com um ID de categoria que não existe
+    Então a API deve retornar o status code 404 Not Found
+    E o corpo da resposta deve conter a mensagem: "Categoria não encontrada."
+
+  Cenário: Listar Produtos de Categoria Existente sem Produtos Associados
+    Dado que uma categoria existe com um ID conhecido mas não possui produtos associados
+    Quando uma requisição GET é enviada para "/products/category/{categoriaId}" usando o ID da categoria
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter um array JSON vazio ([])
+
+  
+👤 Usuários
+
+  Cenário: Cadastrar um Novo Usuário (Cenário de Sucesso)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição POST é enviada para "/users" com um payload JSON válido contendo nome e email
+    Então a API deve retornar o status code 201 Created
+    E o corpo da resposta deve conter o objeto do usuário recém-criado, incluindo um "_id" gerado pela API
+
+  Cenário: Cadastrar Usuário sem Campos Obrigatórios (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição POST é enviada para "/users"
+    E o payload JSON não contém o campo "name"
+    Então a API deve retornar o status code 400 Bad Request
+    E o corpo da resposta deve conter a mensagem: "Por favor, preencha todos os campos obrigatórios: nome e email."
+
+  Cenário: Buscar Usuário Cadastrado por ID (Cenário de Sucesso)
+    Dado que um usuário existe com um ID conhecido
+    Quando uma requisição GET é enviada para "/users/{id}" usando o ID do usuário existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter o objeto JSON com os detalhes completos do usuário solicitado
+
+  Cenário: Buscar Usuário Não Cadastrado (Cenário de Falha)
+    Dado que o sistema está pronto para receber requisições de API
+    Quando uma requisição GET é enviada para "/users/{id}" com um ID de usuário que não existe
+    Então a API deve retornar o status code 404 Not Found
+    E o corpo da resposta deve conter a mensagem: "Usuário não encontrado."
+
+  Cenário: Excluir Usuário Cadastrado
+    Dado que um usuário existe com um ID conhecido
+    Quando uma requisição DELETE é enviada para "/users/{id}" usando o ID do usuário existente
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter a mensagem: "Usuário removido com sucesso."
+    E o campo "success" no corpo da resposta deve ser "true"
+
+  Cenário: Listar Todos os Usuários Cadastrados
+    Dado que o sistema contém usuários cadastrados
+    Quando uma requisição GET é enviada para "/users"
+    Então a API deve retornar o status code 200 OK
+    E o corpo da resposta deve conter um array JSON com a lista de usuários
+    E cada objeto de usuário no array deve conter os campos "_id", "name" e "email"

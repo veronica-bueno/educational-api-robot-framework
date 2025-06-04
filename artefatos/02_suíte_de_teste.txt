@@ -1,0 +1,28 @@
+### Test Set ###
+
+- Cenarios de Testes: Categorias
+    Cadastrar uma nova categoria
+    Buscar categoria cadastrada por ID
+    Atualizar categoria cadastrada
+    Excluir categoria cadastrada
+    Listar todas as categorias cadastradas
+    Cadastrar categoria sem nome
+    Buscar categoria não cadastrada
+
+- Cenarios de Testes: Produtos 
+    Cadastrar um novo produto
+    Buscar produto cadastrado por ID
+    Atualizar produto cadastrado
+    Excluir produto cadastrado
+    Listar todas os produtos cadastrados
+    Cadastrar produto sem preço e quantidade
+    Listar produtos por ID de uma categoria
+    Buscar produto não cadastrado
+
+- Cenarios de Testes: Usuários
+    Cadastrar um novo usuário
+    Buscar usuário cadastrado por ID
+    Excluir usuário cadastrado
+    Listar todos os usuarios cadastrados
+    Cadastrar usuário sem nome
+    Buscar usuário não cadastrado

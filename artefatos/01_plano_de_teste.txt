@@ -1,0 +1,39 @@
+## Test Plan ##
+- Objetivo
+    Validar a funcionalidade completa (CRUD - Criar, Ler, Atualizar, Excluir) dos endpoints de Categorias, Produtos e Usuários da API, garantindo que todas as operações estejam funcionando conforme o esperado e que a integridade dos dados seja mantida.
+
+- Escopo
+    Testes de API para as entidades: Categorias, Produtos e Usuários.
+
+- Operações cobertas:
+    Criação de novos registros (POST).
+    Listagem de todos os registros (GET).
+    Busca de registros por ID (GET ID).
+    Atualização de registros existentes (PUT).
+    Exclusão de registros (DELETE).
+    Listagem de produtos por categoria (GET category ID).
+
+- Validações:
+    Status codes HTTP esperados (200 OK, 201 Created, 400 Bad Request, 404 Not Found).
+    Estrutura e conteúdo do corpo da resposta JSON.
+    Mensagens de erro e sucesso.
+    Comportamento da API em cenários de sucesso e falha (ex: campos obrigatórios ausentes, IDs inexistentes).
+
+- Ferramentas/Bibliotecas
+    Robot Framework: Para automação dos testes.
+    RequestsLibrary: Para realizar requisições HTTP (POST, GET, PUT, DELETE) à API.
+    JSONLibrary: Para manipulação e validação de dados JSON nas respostas da API.
+    Collections: Para operações com coleções (listas e dicionários) nos payloads e respostas.
+    String: Para manipulação de strings (ex: geração de dados aleatórios).
+    Python: Linguagem de programação base para o Robot Framework e suas bibliotecas.
+
+Ambiente
+    API Testada: https://educational-api-production.up.railway.app/api-docs
+    JSON: https://educational-api-production.up.railway.app/swagger.json
+
+
+QA Responsável
+    Verônica Bueno
+
+Cronograma
+    9 horas
