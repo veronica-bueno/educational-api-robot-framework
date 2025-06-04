@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation    Este arquivo contém as Keywords personalizadas para a funcionalidade de Produtos da API.
-...              Ele define as operações de baixo nível para interagir com os endpoints de produtos.
+Documentation    Este arquivo contém as instruções detalhadas para automatizar os testes da 
+...              funcionalidade de Produtos da API.
 
 Library    RequestsLibrary
 Library    JSONLibrary

@@ -1,8 +1,7 @@
 *** Settings ***
-Documentation    Este módulo de testes abrange a funcionalidade de gerenciamento de Categorias da API.
-...              Ele verifica as operações de criação, listagem, busca por ID, atualização e exclusão de categorias,
-...              garantindo que a API se comporte conforme o esperado para cada cenário, incluindo casos de sucesso e falha.
-...              O objetivo é validar a integridade e a disponibilidade dos endpoints de Categorias.
+Documentation    Este arquivo contém as instruções detalhadas para automatizar os testes da 
+...              funcionalidade de Categorias da API.
+
 Library    RequestsLibrary
 Library    JSONLibrary
 Library    Collections

@@ -12,7 +12,8 @@ Suite Setup    Criar Sessão da API
 
 *** Test Cases ***
 Categorias
-    [Documentation]    - Criação de uma nova categoria (cenário de sucesso e falha por falta de nome).
+    [Documentation]    Esta suíte executa uma sequência completa de testes para a funcionalidade de Categorias.
+    ...                - Criação de uma nova categoria (cenário de sucesso e falha por falta de nome).
     ...                - Busca de categorias (por ID existente e ID inexistente, e listagem de todas).
     ...                - Atualização de uma categoria existente.
     ...                - Exclusão de uma categoria.

@@ -12,7 +12,7 @@ Suite Setup    Criar Sessão da API
 
 *** Test Cases ***
 Produtos
-    [Documentation]    Este Test Case (ou Test Suite) executa uma sequência completa de testes para a funcionalidade de Produtos.
+    [Documentation]    Esta suíte executa uma sequência completa de testes para a funcionalidade de Produtos.
     ...                Ele abrange o ciclo de vida de um produto, incluindo:
     ...                - Criação de um novo produto (cenário de sucesso e falha por campos obrigatórios ausentes).
     ...                - Busca de produtos (por ID existente e ID inexistente, listagem de todos, e listagem por categoria).
