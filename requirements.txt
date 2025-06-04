@@ -1,0 +1,7 @@
+### Requisitos para o projeto ###
+
+robotframework
+robotframework-requests
+robotframework-jsonlibrary
+robotframework-collections
+robotframework-string
