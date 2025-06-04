@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-06-04T19:50:06.769166" rpa="false" schemaversion="5">
+<suite id="s1" name="Produtos" source="D:\Estudos\QA REQ\backend-trabalhos\educational-api-robot-framework\tests\produtos.robot">
+<kw name="Criar Sessão da API" owner="config" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:07.779950" level="INFO">Creating Session using : alias=API, url=https://educational-api-production.up.railway.app/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>API</arg>
+<arg>${URL_API}</arg>
+<arg>verify=${SSL_VERIFY}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-04T19:50:07.779950" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:50:07.779325" elapsed="0.000625"/>
+</kw>
+<test id="s1-t1" name="Produtos" line="14">
+<kw name="Cadastrar um novo produto" owner="produtos">
+<kw name="Obter ID de uma categoria existente" owner="categorias">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:08.194435" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/categories 
+ path_url=/api/categories 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:08.195434" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/categories 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '3566', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:07 GMT', 'Etag': 'W/"dee-sv0D8p1QZ476Y9h/PwEWrY4VRQQ"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'ClxSVI44TcS5cRVU0-QtfA'} 
+ body={"success":true,"count":24,"data":[{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores","description":"Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários para home office (fones, cabos e outros itens).","createdAt":"2025-05-23T17:39:43.699Z","__v":0},{"_id":"6830b326e070c0790342e8c2","name":"Brinquedos","description":"Produtos para brincar e se divertir.","createdAt":"2025-05-23T17:40:54.310Z","__v":0},{"_id":"6830ed4114bcf6ae156c7edc","name":"One Piece - O rei dos piratas","description":"Produtos promocionais do anime e da live action.","createdAt":"2025-05-23T21:48:49.247Z","__v":0},{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes","description":"Produtos relacionados a séries e filmes de todos os gêneros.","createdAt":"2025-05-28T16:17:39.506Z","__v":0},{"_id":"68398773848708bda9c6fa8e","name":"Bicicletas indoor","description":"Bicicletas para utilizar no conforto da sua casa","createdAt":"2025-05-30T10:24:51.252Z","__v":0},{"_id":"683f2130848708bda9c6fb20","name":"Eletrônicos","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:22:08.563Z","__v":0},{"_id":"683f2316848708bda9c6fb24","name":"qheswanwmv","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:30:14.280Z","__v":0},{"_id":"683f24bf848708bda9c6fb27","name":"yismnbsgus","description":"yismnbsgus","createdAt":"2025-06-03T16:37:19.632Z","__v":0},{"_id":"683f2507848708bda9c6fb2a","name":"rjdmsusxki","description":"rjdmsusxki","createdAt":"2025-06-03T16:38:31.581Z","__v":0},{"_id":"683f252b848708bda9c6fb2d","name":"mlacutaier","description":"mlacutaier","createdAt":"2025-06-03T16:39:07.331Z","__v":0},{"_id":"683f25ba848708bda9c6fb30","name":"vzqtlndhcb","description":"vzqtlndhcb","createdAt":"2025-06-03T16:41:30.321Z","__v":0},{"_id":"683f25e7848708bda9c6fb33","name":"obvugvamos","description":"obvugvamos","createdAt":"2025-06-03T16:42:15.011Z","__v":0},{"_id":"683f2703848708bda9c6fb37","name":"ckpobtrpor","description":"ckpobtrpor","createdAt":"2025-06-03T16:46:59.160Z","__v":0},{"_id":"683f2819848708bda9c6fb3d","name":"egzbmmftwu","description":"egzbmmftwu","createdAt":"2025-06-03T16:51:37.421Z","__v":0},{"_id":"683f2889848708bda9c6fb41","name":"obufbwedpe","description":"obufbwedpe","createdAt":"2025-06-03T16:53:29.443Z","__v":0},{"_id":"683f28c4848708bda9c6fb44","name":"mgzeekwkgd","description":"mgzeekwkgd","createdAt":"2025-06-03T16:54:28.584Z","__v":0},{"_id":"683f2923848708bda9c6fb47","name":"qlmqcijflu","description":"qlmqcijflu","createdAt":"2025-06-03T16:56:03.237Z","__v":0},{"_id":"683f29f5848708bda9c6fb4a","name":"nyufxcdeip","description":"nyufxcdeip","createdAt":"2025-06-03T16:59:33.907Z","__v":0},{"_id":"683f2a27848708bda9c6fb4c","name":"ohcyhsudta","description":"ohcyhsudta","createdAt":"2025-06-03T17:00:23.469Z","__v":0},{"_id":"683f37c2848708bda9c6fb56","name":"xeoilkuhyl","description":"xeoilkuhyl","createdAt":"2025-06-03T17:58:26.432Z","__v":0},{"_id":"683f3929848708bda9c6fb5c","name":"ypmvinpyxp","description":"teste","createdAt":"2025-06-03T18:04:25.408Z","__v":0},{"_id":"684012de848708bda9c6fc8e","name":"yiwwjskxks","description":"yiwwjskxks","createdAt":"2025-06-04T09:33:18.527Z","__v":0},{"_id":"6840130c848708bda9c6fc90","name":"pdokrwilxx","description":"pdokrwilxx","createdAt":"2025-06-04T09:34:04.797Z","__v":0},{"_id":"68401333848708bda9c6fc92","name":"uhnqzcpker","description":"uhnqzcpker","createdAt":"2025-06-04T09:34:43.740Z","__v":0}]} 
+ </msg>
+<msg time="2025-06-04T19:50:08.196432" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/categories</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:07.779950" elapsed="0.416815"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${RESPONSE_BODY} = {'success': True, 'count': 24, 'data': [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${CATEGORIES_LIST} = [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários pa...</msg>
+<var>${CATEGORIES_LIST}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">Length is 24.</msg>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>msg=Nenhuma categoria encontrada para obter ID.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${PRIMEIRA_CATEGORIA} = {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários par...</msg>
+<var>${PRIMEIRA_CATEGORIA}</var>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${ID_PRIMEIRA_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_PRIMEIRA_CATEGORIA}</var>
+<arg>${PRIMEIRA_CATEGORIA}</arg>
+<arg>_id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">ID da categoria encontrada: 6830b2dfe070c0790342e8c0</msg>
+<arg>ID da categoria encontrada: ${ID_PRIMEIRA_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${ID_PRIMEIRA_CATEGORIA}</value>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</return>
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${ID_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_CATEGORIA}</var>
+<doc>Busca e retorna o ID de uma categoria existente na API.
+Esta Keyword é útil como pré-condição para outros testes que exigem um ID de categoria válido.
+Verifica se a lista de categorias não está vazia antes de extrair o ID.</doc>
+<status status="PASS" start="2025-06-04T19:50:07.779950" elapsed="0.416815"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">6830b2dfe070c0790342e8c0</msg>
+<arg>${ID_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${JSON_PRODUTOS} = {'name': '', 'description': '', 'price': 0, 'quantity': 0, 'category': ''}</msg>
+<var>${JSON_PRODUTOS}</var>
+<arg>${PATH_PAYLOAD}/produtos.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${PALAVRA_ALEATORIA} = qCvZkWkctz</msg>
+<var>${PALAVRA_ALEATORIA}</var>
+<arg>length=10</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${PALAVRA_ALEATORIA} = qcvzkwkctz</msg>
+<var>${PALAVRA_ALEATORIA}</var>
+<arg>${PALAVRA_ALEATORIA}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${PRECO_ALEATORIO} = 2694</msg>
+<var>${PRECO_ALEATORIO}</var>
+<arg>random.randint(1, 9999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">${QUANTIDADE_ALEATORIA} = 955</msg>
+<var>${QUANTIDADE_ALEATORIA}</var>
+<arg>random.randint(0, 999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>name=${PALAVRA_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>description=${PALAVRA_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>price=${PRECO_ALEATORIO}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>quantity=${QUANTIDADE_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>category=${ID_CATEGORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.196765" level="INFO">Json enviado: {'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': '6830b2dfe070c0790342e8c0'}</msg>
+<arg>Json enviado: ${JSON_PRODUTOS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:08.862299" level="INFO">POST Request : url=https://educational-api-production.up.railway.app/api/products 
+ path_url=/api/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '123', 'Content-Type': 'application/json'} 
+ body=b'{"name": "qcvzkwkctz", "description": "qcvzkwkctz", "price": 2694, "quantity": 955, "category": "6830b2dfe070c0790342e8c0"}' 
+ </msg>
+<msg time="2025-06-04T19:50:08.862299" level="INFO">POST Response : url=https://educational-api-production.up.railway.app/api/products 
+ status=201, reason=Created 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '218', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:07 GMT', 'Etag': 'W/"da-M6uo2eOf6fcInsz5WqF/S8ZdVwk"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'TxA9aE-2RpadagBiYqdHTg'} 
+ body={"success":true,"data":{"name":"qcvzkwkctz","description":"qcvzkwkctz","price":2694,"quantity":955,"category":"6830b2dfe070c0790342e8c0","_id":"6840955f848708bda9c6fe5e","createdAt":"2025-06-04T18:50:07.668Z","__v":0}} 
+ </msg>
+<msg time="2025-06-04T19:50:08.862299" level="INFO">C:\Users\veron\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'educational-api-production.up.railway.app'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T19:50:08.862299" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>API</arg>
+<arg>${PRODUCTS_ENDPOINT}</arg>
+<arg>json=${JSON_PRODUTOS}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.196765" elapsed="0.665534"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.877902" level="INFO">Status code: 201</msg>
+<arg>Status code: ${RESPONSE.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.862299" elapsed="0.015603"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.879246" level="INFO">Response content: {"success":true,"data":{"name":"qcvzkwkctz","description":"qcvzkwkctz","price":2694,"quantity":955,"category":"6830b2dfe070c0790342e8c0","_id":"6840955f848708bda9c6fe5e","createdAt":"2025-06-04T18:50:07.668Z","__v":0}}</msg>
+<arg>Response content: ${RESPONSE.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.877902" elapsed="0.002344"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${RESPONSE}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.880246" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.881241" level="INFO">${RESPONSE_BODY} = {'success': True, 'data': {'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': '6830b2dfe070c0790342e8c0', '_id': '6840955f848708bda9c6fe5e', 'createdAt': '2...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.880246" elapsed="0.000995"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.882242" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:08.882242" level="INFO">${DATA} = {'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': '6830b2dfe070c0790342e8c0', '_id': '6840955f848708bda9c6fe5e', 'createdAt': '2025-06-04T18:50:07.668Z', ...</msg>
+<var>${DATA}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.882242" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${DATA}</arg>
+<arg>_id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.882242" elapsed="0.000996"/>
+</kw>
+<if>
+<branch type="IF" condition="${RESPONSE.status_code} == 201">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:08.884235" level="INFO">${ID_PRODUTO_RESPONSE} = 6840955f848708bda9c6fe5e</msg>
+<var>${ID_PRODUTO_RESPONSE}</var>
+<arg>${DATA}</arg>
+<arg>_id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.883238" elapsed="0.000997"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.886229" level="INFO">${ID_PRODUTO} = 6840955f848708bda9c6fe5e</msg>
+<arg>${ID_PRODUTO}</arg>
+<arg>${ID_PRODUTO_RESPONSE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.884235" elapsed="0.001994"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:50:08.883238" elapsed="0.002991"/>
+</branch>
+<status status="PASS" start="2025-06-04T19:50:08.883238" elapsed="0.002991"/>
+</if>
+<doc>Cria um novo produto enviando um payload JSON válido para o endpoint /products.
+Gera nome, descrição, preço e quantidade aleatórios e associa a um ID de categoria existente.</doc>
+<status status="PASS" start="2025-06-04T19:50:07.779950" elapsed="1.106279"/>
+</kw>
+<kw name="Buscar produto cadastrado por ID" owner="produtos">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:08.888259" level="INFO">6840955f848708bda9c6fe5e</msg>
+<arg>${ID_PRODUTO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.888259" elapsed="0.000000"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ path_url=/api/products/6840955f848708bda9c6fe5e 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:09.488339" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '263', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:08 GMT', 'Etag': 'W/"107-r1AXWQwkm7QZofya+yRf1yKu7Ms"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'RDCsouOBTe6mtm0sss7a6g'} 
+ body={"success":true,"data":{"_id":"6840955f848708bda9c6fe5e","name":"qcvzkwkctz","description":"qcvzkwkctz","price":2694,"quantity":955,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-04T18:50:07.668Z","__v":0}} 
+ </msg>
+<msg time="2025-06-04T19:50:09.488339" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products/${ID_PRODUTO}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.888259" elapsed="0.600080"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">${RESPONSE_BODY} = {'success': True, 'data': {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name':...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">{'success': True, 'data': {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-04T18:50:07.668Z', '__v': 0}}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">${DATA} = {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computador...</msg>
+<var>${DATA}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">Produto por ID: {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'qcvzkwkctz', 'price': 2694, 'quantity': 955, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-04T18:50:07.668Z', '__v': 0}</msg>
+<arg>Produto por ID: ${DATA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<doc>Busca um produto específico utilizando o ID previamente cadastrado (variável ID Produto).
+Verifica se o status da resposta é 200 OK e se a resposta contém os detalhes do produto na chave 'data'.</doc>
+<status status="PASS" start="2025-06-04T19:50:08.887226" elapsed="0.601113"/>
+</kw>
+<kw name="Atualizar produto cadastrado" owner="produtos">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">${JSON_PRODUTOS} = {'name': '', 'description': '', 'price': 0, 'quantity': 0, 'category': ''}</msg>
+<var>${JSON_PRODUTOS}</var>
+<arg>${PATH_PAYLOAD}/produtos.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:09.488339" level="INFO">Removed item with key 'name' and value ''.</msg>
+<arg>${JSON_PRODUTOS}</arg>
+<arg>name</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:09.503517" level="INFO">Removed item with key 'price' and value '0'.</msg>
+<arg>${JSON_PRODUTOS}</arg>
+<arg>price</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:09.503517" level="INFO">Removed item with key 'category' and value ''.</msg>
+<arg>${JSON_PRODUTOS}</arg>
+<arg>category</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-04T19:50:09.503517" level="INFO">${QUANTIDADE_ALEATORIA} = 681</msg>
+<var>${QUANTIDADE_ALEATORIA}</var>
+<arg>random.randint(0, 999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>description=teste</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>quantity=${QUANTIDADE_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.000000"/>
+</kw>
+<kw name="PUT" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:10.324868" level="INFO">PUT Request : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ path_url=/api/products/6840955f848708bda9c6fe5e 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '41', 'Content-Type': 'application/json'} 
+ body=b'{"description": "teste", "quantity": 681}' 
+ </msg>
+<msg time="2025-06-04T19:50:10.324868" level="INFO">PUT Response : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '258', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:09 GMT', 'Etag': 'W/"102-kqCoa/aZstxosH/FwRyx+8LJS60"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'OSk007NaRhiEdLVwm3z_FQ'} 
+ body={"success":true,"data":{"_id":"6840955f848708bda9c6fe5e","name":"qcvzkwkctz","description":"teste","price":2694,"quantity":681,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-04T18:50:07.668Z","__v":0}} 
+ </msg>
+<msg time="2025-06-04T19:50:10.324868" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products/${ID_PRODUTO}</arg>
+<arg>json=${JSON_PRODUTOS}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a PUT request.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.503517" elapsed="0.821351"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.324868" level="INFO">${RESPONSE_BODY} = {'success': True, 'data': {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'teste', 'price': 2694, 'quantity': 681, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Ele...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.324868" level="INFO">{'success': True, 'data': {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'teste', 'price': 2694, 'quantity': 681, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-04T18:50:07.668Z', '__v': 0}}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:10.324868" level="INFO">${DATA} = {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'teste', 'price': 2694, 'quantity': 681, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'},...</msg>
+<var>${DATA}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.324868" level="INFO">Produto atualizado: {'_id': '6840955f848708bda9c6fe5e', 'name': 'qcvzkwkctz', 'description': 'teste', 'price': 2694, 'quantity': 681, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-04T18:50:07.668Z', '__v': 0}</msg>
+<arg>Produto atualizado: ${DATA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.000000"/>
+</kw>
+<doc>Atualiza a descrição e quantidade de um produto existente usando o ID previamente cadastrado (ID Produto).
+Remove campos como 'name', 'price' e 'category' do payload para testar a atualização parcial.
+Verifica se o status da resposta é 200 OK e se a resposta reflete as informações atualizadas.</doc>
+<status status="PASS" start="2025-06-04T19:50:09.488339" elapsed="0.836529"/>
+</kw>
+<kw name="Excluir produto cadastrado" owner="produtos">
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:10.921711" level="INFO">DELETE Request : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ path_url=/api/products/6840955f848708bda9c6fe5e 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:10.923425" level="INFO">DELETE Response : url=https://educational-api-production.up.railway.app/api/products/6840955f848708bda9c6fe5e 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '58', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:09 GMT', 'Etag': 'W/"3a-HOVLApE1AvvFoadyDdjsj41ODfk"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'opmEBmKhRMyEBQaE0-QtfA'} 
+ body={"success":true,"message":"Produto removido com sucesso."} 
+ </msg>
+<msg time="2025-06-04T19:50:10.924286" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products/${ID_PRODUTO}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.599709"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.924577" level="INFO">&lt;Response [200]&gt;</msg>
+<arg>${RESPONSE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.924577" level="INFO">${RESPONSE_BODY} = {'success': True, 'message': 'Produto removido com sucesso.'}</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:10.924577" level="INFO">{'success': True, 'message': 'Produto removido com sucesso.'}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>success</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:10.924577" level="INFO">${MESSAGE} = Produto removido com sucesso.</msg>
+<var>${MESSAGE}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:10.924577" level="INFO">${SUCCESS} = True</msg>
+<var>${SUCCESS}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>success</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Produto removido com sucesso.</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${SUCCESS}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.000000"/>
+</kw>
+<doc>Exclui um produto existente utilizando o ID previamente cadastrado (ID Produto).
+Verifica se o status da resposta é 200 OK e se a resposta de sucesso contém a mensagem e o status 'success' esperados.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.324868" elapsed="0.599709"/>
+</kw>
+<kw name="Listar todas os produtos cadastrados" owner="produtos">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:11.527356" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/products 
+ path_url=/api/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:11.527356" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/products 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '3685', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:10 GMT', 'Etag': 'W/"e65-UcksULomP1a4kktbM8C53oQy2Eo"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': '2kKXrpwFTFW-XZkF0-QtfA'} 
+ body={"success":true,"count":13,"data":[{"_id":"6830b33ae070c0790342e8c5","name":"Smartphone Luffy","description":"Smartphone do Luffy de última geração com câmera de alta resolução.","price":799.99,"quantity":499,"category":null,"createdAt":"2025-05-23T17:41:14.515Z","__v":0},{"_id":"6830d44a651ba0f32dfbc3f4","name":"Smartphone Samsung","description":"Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink","price":1500,"quantity":249,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T20:02:18.823Z","__v":0},{"_id":"6830d6f5651ba0f32dfbc412","name":"Smartphone 20","description":"Smartphone modelo 20.","price":1000,"quantity":149,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T20:13:41.105Z","__v":0},{"_id":"6830e5cf847635a3d1f3d35c","name":"Smartphone X","description":"Smartphone de última geração com câmera de alta resolução.","price":999.99,"quantity":50,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T21:17:03.974Z","__v":0},{"_id":"68374d53848708bda9c6fa41","name":"Gossip Girl","description":"DVD Gossip Girl 5ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.","price":49.9,"quantity":96,"category":{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes"},"createdAt":"2025-05-28T17:52:19.867Z","__v":0},{"_id":"68374da5848708bda9c6fa46","name":"Friends 2ª temporada","description":"DVD Friends 2ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.","price":69.9,"quantity":52,"category":{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes"},"createdAt":"2025-05-28T17:53:41.313Z","__v":0},{"_id":"68374dcd848708bda9c6fa49","name":"The Vampire Diaries 8ª temporada","description":"The Vampire Diaries 8ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.","price":39.9,"quantity":150,"category":{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes"},"createdAt":"2025-05-28T17:54:21.068Z","__v":0},{"_id":"68375a3e848708bda9c6fa88","name":"The Vampire Diaries 10ª temporada","description":"The Vampire Diaries 10ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.","price":39.9,"quantity":150,"category":{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes"},"createdAt":"2025-05-28T18:47:26.728Z","__v":0},{"_id":"683f4df6848708bda9c6fbd4","name":"gihzrhfwdv","description":"gihzrhfwdv","price":6375,"quantity":86,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:33:10.411Z","__v":0},{"_id":"683f4ec3848708bda9c6fbd8","name":"jpqrajsixq","description":"jpqrajsixq","price":2906,"quantity":543,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:36:35.279Z","__v":0},{"_id":"683f4f62848708bda9c6fbde","name":"ulwbkbxhrd","description":"ulwbkbxhrd","price":3770,"quantity":345,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:39:14.370Z","__v":0},{"_id":"683f4fc0848708bda9c6fbe5","name":"plmpwrcaav","description":"plmpwrcaav","price":6812,"quantity":176,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:40:48.992Z","__v":0},{"_id":"683f509d848708bda9c6fbec","name":"ofxqidzmsn","description":"teste","price":4389,"quantity":853,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:44:29.903Z","__v":0}]} 
+ </msg>
+<msg time="2025-06-04T19:50:11.527356" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.602779"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.527356" level="INFO">${RESPONSE_BODY} = {'success': True, 'count': 13, 'data': [{'_id': '6830b33ae070c0790342e8c5', 'name': 'Smartphone Luffy', 'description': 'Smartphone do Luffy de última geração com câmera de alta resolução.', 'price': 7...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.527356" level="INFO">${DATA} = [{'_id': '6830b33ae070c0790342e8c5', 'name': 'Smartphone Luffy', 'description': 'Smartphone do Luffy de última geração com câmera de alta resolução.', 'price': 799.99, 'quantity': 499, 'category': Non...</msg>
+<var>${DATA}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.527356" level="INFO">Produtos cadastrados: [{'_id': '6830b33ae070c0790342e8c5', 'name': 'Smartphone Luffy', 'description': 'Smartphone do Luffy de última geração com câmera de alta resolução.', 'price': 799.99, 'quantity': 499, 'category': None, 'createdAt': '2025-05-23T17:41:14.515Z', '__v': 0}, {'_id': '6830d44a651ba0f32dfbc3f4', 'name': 'Smartphone Samsung', 'description': 'Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink', 'price': 1500, 'quantity': 249, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:02:18.823Z', '__v': 0}, {'_id': '6830d6f5651ba0f32dfbc412', 'name': 'Smartphone 20', 'description': 'Smartphone modelo 20.', 'price': 1000, 'quantity': 149, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:13:41.105Z', '__v': 0}, {'_id': '6830e5cf847635a3d1f3d35c', 'name': 'Smartphone X', 'description': 'Smartphone de última geração com câmera de alta resolução.', 'price': 999.99, 'quantity': 50, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T21:17:03.974Z', '__v': 0}, {'_id': '68374d53848708bda9c6fa41', 'name': 'Gossip Girl', 'description': "DVD Gossip Girl 5ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.", 'price': 49.9, 'quantity': 96, 'category': {'_id': '68373723848708bda9c6fa21', 'name': 'Séries e Filmes'}, 'createdAt': '2025-05-28T17:52:19.867Z', '__v': 0}, {'_id': '68374da5848708bda9c6fa46', 'name': 'Friends 2ª temporada', 'description': "DVD Friends 2ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.", 'price': 69.9, 'quantity': 52, 'category': {'_id': '68373723848708bda9c6fa21', 'name': 'Séries e Filmes'}, 'createdAt': '2025-05-28T17:53:41.313Z', '__v': 0}, {'_id': '68374dcd848708bda9c6fa49', 'name': 'The Vampire Diaries 8ª temporada', 'description': "The Vampire Diaries 8ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.", 'price': 39.9, 'quantity': 150, 'category': {'_id': '68373723848708bda9c6fa21', 'name': 'Séries e Filmes'}, 'createdAt': '2025-05-28T17:54:21.068Z', '__v': 0}, {'_id': '68375a3e848708bda9c6fa88', 'name': 'The Vampire Diaries 10ª temporada', 'description': "The Vampire Diaries 10ª temporada disponível nos idiomas inglês e portugues. Contém 4 DVD's.", 'price': 39.9, 'quantity': 150, 'category': {'_id': '68373723848708bda9c6fa21', 'name': 'Séries e Filmes'}, 'createdAt': '2025-05-28T18:47:26.728Z', '__v': 0}, {'_id': '683f4df6848708bda9c6fbd4', 'name': 'gihzrhfwdv', 'description': 'gihzrhfwdv', 'price': 6375, 'quantity': 86, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:33:10.411Z', '__v': 0}, {'_id': '683f4ec3848708bda9c6fbd8', 'name': 'jpqrajsixq', 'description': 'jpqrajsixq', 'price': 2906, 'quantity': 543, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:36:35.279Z', '__v': 0}, {'_id': '683f4f62848708bda9c6fbde', 'name': 'ulwbkbxhrd', 'description': 'ulwbkbxhrd', 'price': 3770, 'quantity': 345, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:39:14.370Z', '__v': 0}, {'_id': '683f4fc0848708bda9c6fbe5', 'name': 'plmpwrcaav', 'description': 'plmpwrcaav', 'price': 6812, 'quantity': 176, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:40:48.992Z', '__v': 0}, {'_id': '683f509d848708bda9c6fbec', 'name': 'ofxqidzmsn', 'description': 'teste', 'price': 4389, 'quantity': 853, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:44:29.903Z', '__v': 0}]</msg>
+<arg>Produtos cadastrados: ${DATA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.000000"/>
+</kw>
+<doc>Lista todos os produtos disponíveis na API.
+Verifica se o status da resposta é 200 OK e se a resposta contém uma lista de produtos na chave 'data'.</doc>
+<status status="PASS" start="2025-06-04T19:50:10.924577" elapsed="0.602779"/>
+</kw>
+<kw name="Cadastrar produto sem preço e quantidade" owner="produtos">
+<kw name="Obter ID de uma categoria existente" owner="categorias">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:11.891246" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/categories 
+ path_url=/api/categories 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:11.891246" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/categories 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '3566', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:10 GMT', 'Etag': 'W/"dee-sv0D8p1QZ476Y9h/PwEWrY4VRQQ"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'jRKKeVuUSfmLonx90-QtfA'} 
+ body={"success":true,"count":24,"data":[{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores","description":"Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários para home office (fones, cabos e outros itens).","createdAt":"2025-05-23T17:39:43.699Z","__v":0},{"_id":"6830b326e070c0790342e8c2","name":"Brinquedos","description":"Produtos para brincar e se divertir.","createdAt":"2025-05-23T17:40:54.310Z","__v":0},{"_id":"6830ed4114bcf6ae156c7edc","name":"One Piece - O rei dos piratas","description":"Produtos promocionais do anime e da live action.","createdAt":"2025-05-23T21:48:49.247Z","__v":0},{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes","description":"Produtos relacionados a séries e filmes de todos os gêneros.","createdAt":"2025-05-28T16:17:39.506Z","__v":0},{"_id":"68398773848708bda9c6fa8e","name":"Bicicletas indoor","description":"Bicicletas para utilizar no conforto da sua casa","createdAt":"2025-05-30T10:24:51.252Z","__v":0},{"_id":"683f2130848708bda9c6fb20","name":"Eletrônicos","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:22:08.563Z","__v":0},{"_id":"683f2316848708bda9c6fb24","name":"qheswanwmv","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:30:14.280Z","__v":0},{"_id":"683f24bf848708bda9c6fb27","name":"yismnbsgus","description":"yismnbsgus","createdAt":"2025-06-03T16:37:19.632Z","__v":0},{"_id":"683f2507848708bda9c6fb2a","name":"rjdmsusxki","description":"rjdmsusxki","createdAt":"2025-06-03T16:38:31.581Z","__v":0},{"_id":"683f252b848708bda9c6fb2d","name":"mlacutaier","description":"mlacutaier","createdAt":"2025-06-03T16:39:07.331Z","__v":0},{"_id":"683f25ba848708bda9c6fb30","name":"vzqtlndhcb","description":"vzqtlndhcb","createdAt":"2025-06-03T16:41:30.321Z","__v":0},{"_id":"683f25e7848708bda9c6fb33","name":"obvugvamos","description":"obvugvamos","createdAt":"2025-06-03T16:42:15.011Z","__v":0},{"_id":"683f2703848708bda9c6fb37","name":"ckpobtrpor","description":"ckpobtrpor","createdAt":"2025-06-03T16:46:59.160Z","__v":0},{"_id":"683f2819848708bda9c6fb3d","name":"egzbmmftwu","description":"egzbmmftwu","createdAt":"2025-06-03T16:51:37.421Z","__v":0},{"_id":"683f2889848708bda9c6fb41","name":"obufbwedpe","description":"obufbwedpe","createdAt":"2025-06-03T16:53:29.443Z","__v":0},{"_id":"683f28c4848708bda9c6fb44","name":"mgzeekwkgd","description":"mgzeekwkgd","createdAt":"2025-06-03T16:54:28.584Z","__v":0},{"_id":"683f2923848708bda9c6fb47","name":"qlmqcijflu","description":"qlmqcijflu","createdAt":"2025-06-03T16:56:03.237Z","__v":0},{"_id":"683f29f5848708bda9c6fb4a","name":"nyufxcdeip","description":"nyufxcdeip","createdAt":"2025-06-03T16:59:33.907Z","__v":0},{"_id":"683f2a27848708bda9c6fb4c","name":"ohcyhsudta","description":"ohcyhsudta","createdAt":"2025-06-03T17:00:23.469Z","__v":0},{"_id":"683f37c2848708bda9c6fb56","name":"xeoilkuhyl","description":"xeoilkuhyl","createdAt":"2025-06-03T17:58:26.432Z","__v":0},{"_id":"683f3929848708bda9c6fb5c","name":"ypmvinpyxp","description":"teste","createdAt":"2025-06-03T18:04:25.408Z","__v":0},{"_id":"684012de848708bda9c6fc8e","name":"yiwwjskxks","description":"yiwwjskxks","createdAt":"2025-06-04T09:33:18.527Z","__v":0},{"_id":"6840130c848708bda9c6fc90","name":"pdokrwilxx","description":"pdokrwilxx","createdAt":"2025-06-04T09:34:04.797Z","__v":0},{"_id":"68401333848708bda9c6fc92","name":"uhnqzcpker","description":"uhnqzcpker","createdAt":"2025-06-04T09:34:43.740Z","__v":0}]} 
+ </msg>
+<msg time="2025-06-04T19:50:11.891246" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/categories</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.363890"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">${RESPONSE_BODY} = {'success': True, 'count': 24, 'data': [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">${CATEGORIES_LIST} = [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários pa...</msg>
+<var>${CATEGORIES_LIST}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">Length is 24.</msg>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>msg=Nenhuma categoria encontrada para obter ID.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">${PRIMEIRA_CATEGORIA} = {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários par...</msg>
+<var>${PRIMEIRA_CATEGORIA}</var>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">${ID_PRIMEIRA_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_PRIMEIRA_CATEGORIA}</var>
+<arg>${PRIMEIRA_CATEGORIA}</arg>
+<arg>_id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.906941" level="INFO">ID da categoria encontrada: 6830b2dfe070c0790342e8c0</msg>
+<arg>ID da categoria encontrada: ${ID_PRIMEIRA_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${ID_PRIMEIRA_CATEGORIA}</value>
+<status status="PASS" start="2025-06-04T19:50:11.906941" elapsed="0.015604"/>
+</return>
+<msg time="2025-06-04T19:50:11.922545" level="INFO">${ID_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_CATEGORIA}</var>
+<doc>Busca e retorna o ID de uma categoria existente na API.
+Esta Keyword é útil como pré-condição para outros testes que exigem um ID de categoria válido.
+Verifica se a lista de categorias não está vazia antes de extrair o ID.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.395189"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">ID da Categoria utilizada: 6830b2dfe070c0790342e8c0</msg>
+<arg>ID da Categoria utilizada: ${ID_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">${JSON_PRODUTOS} = {'name': '', 'description': '', 'price': 0, 'quantity': 0, 'category': ''}</msg>
+<var>${JSON_PRODUTOS}</var>
+<arg>${PATH_PAYLOAD}/produtos.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">${PALAVRA_ALEATORIA} = WIKendROIt</msg>
+<var>${PALAVRA_ALEATORIA}</var>
+<arg>length=10</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">${PALAVRA_ALEATORIA} = wikendroit</msg>
+<var>${PALAVRA_ALEATORIA}</var>
+<arg>${PALAVRA_ALEATORIA}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">Removed item with key 'price' and value '0'.</msg>
+<arg>${JSON_PRODUTOS}</arg>
+<arg>price</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">Removed item with key 'quantity' and value '0'.</msg>
+<arg>${JSON_PRODUTOS}</arg>
+<arg>quantity</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>name=${PALAVRA_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>description=${PALAVRA_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>category=${ID_CATEGORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${JSON_PRODUTOS}</arg>
+<arg>description=${PALAVRA_ALEATORIA}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.922545" level="INFO">Json enviado: {'name': 'wikendroit', 'description': 'wikendroit', 'category': '6830b2dfe070c0790342e8c0'}</msg>
+<arg>Json enviado: ${JSON_PRODUTOS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:11.970326" level="INFO">POST Request : url=https://educational-api-production.up.railway.app/api/products 
+ path_url=/api/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '91', 'Content-Type': 'application/json'} 
+ body=b'{"name": "wikendroit", "description": "wikendroit", "category": "6830b2dfe070c0790342e8c0"}' 
+ </msg>
+<msg time="2025-06-04T19:50:11.970326" level="INFO">POST Response : url=https://educational-api-production.up.railway.app/api/products 
+ status=400, reason=Bad Request 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '115', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:11 GMT', 'Etag': 'W/"73-YmilbJ81cKiUAIpr7YcUtExw4Tw"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': '1sq9t-HpRXqQlNenYqdHTg'} 
+ body={"message":"Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria."} 
+ </msg>
+<msg time="2025-06-04T19:50:11.970326" level="INFO">C:\Users\veron\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'educational-api-production.up.railway.app'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-04T19:50:11.970326" level="INFO">${RESPONSE} = &lt;Response [400]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>API</arg>
+<arg>${PRODUCTS_ENDPOINT}</arg>
+<arg>json=${JSON_PRODUTOS}</arg>
+<arg>expected_status=400</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.922545" elapsed="0.047781"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.979763" level="INFO">Status code: 400</msg>
+<arg>Status code: ${RESPONSE.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.979763" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.980800" level="INFO">Response content: {"message":"Por favor, preencha todos os campos obrigatÃ³rios: nome, descriÃ§Ã£o, preÃ§o, quantidade e categoria."}</msg>
+<arg>Response content: ${RESPONSE.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.980800" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${RESPONSE.status_code} == 400">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.981794" level="INFO">${RESPONSE_BODY} = {'message': 'Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria.'}</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.981794" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:11.982789" level="INFO">{'message': 'Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria.'}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.981794" elapsed="0.000995"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.982789" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:11.982789" level="INFO">${MESSAGE} = Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria.</msg>
+<var>${MESSAGE}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.982789" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Por favor, preencha todos os campos obrigatórios: nome, descrição, preço, quantidade e categoria.</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.982789" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:50:11.980800" elapsed="0.002989"/>
+</branch>
+<status status="PASS" start="2025-06-04T19:50:11.980800" elapsed="0.002989"/>
+</if>
+<doc>Tenta cadastrar um novo produto sem fornecer os campos 'price' e 'quantity' no payload.
+Verifica se o status da resposta é 400 Bad Request e se a mensagem de erro esperada é retornada.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.527356" elapsed="0.456433"/>
+</kw>
+<kw name="Listar produtos por ID de uma categoria" owner="produtos">
+<kw name="Obter ID de uma categoria existente" owner="categorias">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/categories 
+ path_url=/api/categories 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:12.367705" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/categories 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '3566', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:11 GMT', 'Etag': 'W/"dee-sv0D8p1QZ476Y9h/PwEWrY4VRQQ"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': '_Cba_WXOTnuWGC2tYqdHTg'} 
+ body={"success":true,"count":24,"data":[{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores","description":"Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários para home office (fones, cabos e outros itens).","createdAt":"2025-05-23T17:39:43.699Z","__v":0},{"_id":"6830b326e070c0790342e8c2","name":"Brinquedos","description":"Produtos para brincar e se divertir.","createdAt":"2025-05-23T17:40:54.310Z","__v":0},{"_id":"6830ed4114bcf6ae156c7edc","name":"One Piece - O rei dos piratas","description":"Produtos promocionais do anime e da live action.","createdAt":"2025-05-23T21:48:49.247Z","__v":0},{"_id":"68373723848708bda9c6fa21","name":"Séries e Filmes","description":"Produtos relacionados a séries e filmes de todos os gêneros.","createdAt":"2025-05-28T16:17:39.506Z","__v":0},{"_id":"68398773848708bda9c6fa8e","name":"Bicicletas indoor","description":"Bicicletas para utilizar no conforto da sua casa","createdAt":"2025-05-30T10:24:51.252Z","__v":0},{"_id":"683f2130848708bda9c6fb20","name":"Eletrônicos","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:22:08.563Z","__v":0},{"_id":"683f2316848708bda9c6fb24","name":"qheswanwmv","description":"Produtos eletrônicos como smartphones, laptops, etc.","createdAt":"2025-06-03T16:30:14.280Z","__v":0},{"_id":"683f24bf848708bda9c6fb27","name":"yismnbsgus","description":"yismnbsgus","createdAt":"2025-06-03T16:37:19.632Z","__v":0},{"_id":"683f2507848708bda9c6fb2a","name":"rjdmsusxki","description":"rjdmsusxki","createdAt":"2025-06-03T16:38:31.581Z","__v":0},{"_id":"683f252b848708bda9c6fb2d","name":"mlacutaier","description":"mlacutaier","createdAt":"2025-06-03T16:39:07.331Z","__v":0},{"_id":"683f25ba848708bda9c6fb30","name":"vzqtlndhcb","description":"vzqtlndhcb","createdAt":"2025-06-03T16:41:30.321Z","__v":0},{"_id":"683f25e7848708bda9c6fb33","name":"obvugvamos","description":"obvugvamos","createdAt":"2025-06-03T16:42:15.011Z","__v":0},{"_id":"683f2703848708bda9c6fb37","name":"ckpobtrpor","description":"ckpobtrpor","createdAt":"2025-06-03T16:46:59.160Z","__v":0},{"_id":"683f2819848708bda9c6fb3d","name":"egzbmmftwu","description":"egzbmmftwu","createdAt":"2025-06-03T16:51:37.421Z","__v":0},{"_id":"683f2889848708bda9c6fb41","name":"obufbwedpe","description":"obufbwedpe","createdAt":"2025-06-03T16:53:29.443Z","__v":0},{"_id":"683f28c4848708bda9c6fb44","name":"mgzeekwkgd","description":"mgzeekwkgd","createdAt":"2025-06-03T16:54:28.584Z","__v":0},{"_id":"683f2923848708bda9c6fb47","name":"qlmqcijflu","description":"qlmqcijflu","createdAt":"2025-06-03T16:56:03.237Z","__v":0},{"_id":"683f29f5848708bda9c6fb4a","name":"nyufxcdeip","description":"nyufxcdeip","createdAt":"2025-06-03T16:59:33.907Z","__v":0},{"_id":"683f2a27848708bda9c6fb4c","name":"ohcyhsudta","description":"ohcyhsudta","createdAt":"2025-06-03T17:00:23.469Z","__v":0},{"_id":"683f37c2848708bda9c6fb56","name":"xeoilkuhyl","description":"xeoilkuhyl","createdAt":"2025-06-03T17:58:26.432Z","__v":0},{"_id":"683f3929848708bda9c6fb5c","name":"ypmvinpyxp","description":"teste","createdAt":"2025-06-03T18:04:25.408Z","__v":0},{"_id":"684012de848708bda9c6fc8e","name":"yiwwjskxks","description":"yiwwjskxks","createdAt":"2025-06-04T09:33:18.527Z","__v":0},{"_id":"6840130c848708bda9c6fc90","name":"pdokrwilxx","description":"pdokrwilxx","createdAt":"2025-06-04T09:34:04.797Z","__v":0},{"_id":"68401333848708bda9c6fc92","name":"uhnqzcpker","description":"uhnqzcpker","createdAt":"2025-06-04T09:34:43.740Z","__v":0}]} 
+ </msg>
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/categories</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.986746" elapsed="0.380959"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${RESPONSE_BODY} = {'success': True, 'count': 24, 'data': [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${CATEGORIES_LIST} = [{'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários pa...</msg>
+<var>${CATEGORIES_LIST}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">Length is 24.</msg>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>msg=Nenhuma categoria encontrada para obter ID.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${PRIMEIRA_CATEGORIA} = {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores', 'description': 'Produtos eletrônicos como smartphones, laptops, computadores, peças de notebooke e CPU, além de acessários par...</msg>
+<var>${PRIMEIRA_CATEGORIA}</var>
+<arg>${CATEGORIES_LIST}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${ID_PRIMEIRA_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_PRIMEIRA_CATEGORIA}</var>
+<arg>${PRIMEIRA_CATEGORIA}</arg>
+<arg>_id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">ID da categoria encontrada: 6830b2dfe070c0790342e8c0</msg>
+<arg>ID da categoria encontrada: ${ID_PRIMEIRA_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${ID_PRIMEIRA_CATEGORIA}</value>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</return>
+<msg time="2025-06-04T19:50:12.367705" level="INFO">${ID_CATEGORIA} = 6830b2dfe070c0790342e8c0</msg>
+<var>${ID_CATEGORIA}</var>
+<doc>Busca e retorna o ID de uma categoria existente na API.
+Esta Keyword é útil como pré-condição para outros testes que exigem um ID de categoria válido.
+Verifica se a lista de categorias não está vazia antes de extrair o ID.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.984787" elapsed="0.382918"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:12.367705" level="INFO">ID da Categoria para listagem: 6830b2dfe070c0790342e8c0</msg>
+<arg>ID da Categoria para listagem: ${ID_CATEGORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.000000"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/products/category/6830b2dfe070c0790342e8c0 
+ path_url=/api/products/category/6830b2dfe070c0790342e8c0 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:13.188333" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/products/category/6830b2dfe070c0790342e8c0 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '2138', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:12 GMT', 'Etag': 'W/"85a-89tuVjgXO3oJS6gFsCTiWkhLMno"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'Bo1T-6fMQlqeV85pss7a6g'} 
+ body={"success":true,"count":8,"data":[{"_id":"6830d44a651ba0f32dfbc3f4","name":"Smartphone Samsung","description":"Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink","price":1500,"quantity":249,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T20:02:18.823Z","__v":0},{"_id":"6830d6f5651ba0f32dfbc412","name":"Smartphone 20","description":"Smartphone modelo 20.","price":1000,"quantity":149,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T20:13:41.105Z","__v":0},{"_id":"6830e5cf847635a3d1f3d35c","name":"Smartphone X","description":"Smartphone de última geração com câmera de alta resolução.","price":999.99,"quantity":50,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-05-23T21:17:03.974Z","__v":0},{"_id":"683f4df6848708bda9c6fbd4","name":"gihzrhfwdv","description":"gihzrhfwdv","price":6375,"quantity":86,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:33:10.411Z","__v":0},{"_id":"683f4ec3848708bda9c6fbd8","name":"jpqrajsixq","description":"jpqrajsixq","price":2906,"quantity":543,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:36:35.279Z","__v":0},{"_id":"683f4f62848708bda9c6fbde","name":"ulwbkbxhrd","description":"ulwbkbxhrd","price":3770,"quantity":345,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:39:14.370Z","__v":0},{"_id":"683f4fc0848708bda9c6fbe5","name":"plmpwrcaav","description":"plmpwrcaav","price":6812,"quantity":176,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:40:48.992Z","__v":0},{"_id":"683f509d848708bda9c6fbec","name":"ofxqidzmsn","description":"teste","price":4389,"quantity":853,"category":{"_id":"6830b2dfe070c0790342e8c0","name":"Eletrônicos e Computadores"},"createdAt":"2025-06-03T19:44:29.903Z","__v":0}]} 
+ </msg>
+<msg time="2025-06-04T19:50:13.188333" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products/category/${ID_CATEGORIA}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:12.367705" elapsed="0.820628"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">${RESPONSE_BODY} = {'success': True, 'count': 8, 'data': [{'_id': '6830d44a651ba0f32dfbc3f4', 'name': 'Smartphone Samsung', 'description': 'Smartphone Samsung modelo de última geração com câmera de alta resolução. Dispo...</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">{'success': True, 'count': 8, 'data': [{'_id': '6830d44a651ba0f32dfbc3f4', 'name': 'Smartphone Samsung', 'description': 'Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink', 'price': 1500, 'quantity': 249, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:02:18.823Z', '__v': 0}, {'_id': '6830d6f5651ba0f32dfbc412', 'name': 'Smartphone 20', 'description': 'Smartphone modelo 20.', 'price': 1000, 'quantity': 149, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:13:41.105Z', '__v': 0}, {'_id': '6830e5cf847635a3d1f3d35c', 'name': 'Smartphone X', 'description': 'Smartphone de última geração com câmera de alta resolução.', 'price': 999.99, 'quantity': 50, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T21:17:03.974Z', '__v': 0}, {'_id': '683f4df6848708bda9c6fbd4', 'name': 'gihzrhfwdv', 'description': 'gihzrhfwdv', 'price': 6375, 'quantity': 86, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:33:10.411Z', '__v': 0}, {'_id': '683f4ec3848708bda9c6fbd8', 'name': 'jpqrajsixq', 'description': 'jpqrajsixq', 'price': 2906, 'quantity': 543, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:36:35.279Z', '__v': 0}, {'_id': '683f4f62848708bda9c6fbde', 'name': 'ulwbkbxhrd', 'description': 'ulwbkbxhrd', 'price': 3770, 'quantity': 345, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:39:14.370Z', '__v': 0}, {'_id': '683f4fc0848708bda9c6fbe5', 'name': 'plmpwrcaav', 'description': 'plmpwrcaav', 'price': 6812, 'quantity': 176, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:40:48.992Z', '__v': 0}, {'_id': '683f509d848708bda9c6fbec', 'name': 'ofxqidzmsn', 'description': 'teste', 'price': 4389, 'quantity': 853, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:44:29.903Z', '__v': 0}]}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">${DATA} = [{'_id': '6830d44a651ba0f32dfbc3f4', 'name': 'Smartphone Samsung', 'description': 'Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink', '...</msg>
+<var>${DATA}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">Produtos da categoria de ID 6830b2dfe070c0790342e8c0: [{'_id': '6830d44a651ba0f32dfbc3f4', 'name': 'Smartphone Samsung', 'description': 'Smartphone Samsung modelo de última geração com câmera de alta resolução. Disponível nas cores: Black, Blue, Pink', 'price': 1500, 'quantity': 249, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:02:18.823Z', '__v': 0}, {'_id': '6830d6f5651ba0f32dfbc412', 'name': 'Smartphone 20', 'description': 'Smartphone modelo 20.', 'price': 1000, 'quantity': 149, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T20:13:41.105Z', '__v': 0}, {'_id': '6830e5cf847635a3d1f3d35c', 'name': 'Smartphone X', 'description': 'Smartphone de última geração com câmera de alta resolução.', 'price': 999.99, 'quantity': 50, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-05-23T21:17:03.974Z', '__v': 0}, {'_id': '683f4df6848708bda9c6fbd4', 'name': 'gihzrhfwdv', 'description': 'gihzrhfwdv', 'price': 6375, 'quantity': 86, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:33:10.411Z', '__v': 0}, {'_id': '683f4ec3848708bda9c6fbd8', 'name': 'jpqrajsixq', 'description': 'jpqrajsixq', 'price': 2906, 'quantity': 543, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:36:35.279Z', '__v': 0}, {'_id': '683f4f62848708bda9c6fbde', 'name': 'ulwbkbxhrd', 'description': 'ulwbkbxhrd', 'price': 3770, 'quantity': 345, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:39:14.370Z', '__v': 0}, {'_id': '683f4fc0848708bda9c6fbe5', 'name': 'plmpwrcaav', 'description': 'plmpwrcaav', 'price': 6812, 'quantity': 176, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:40:48.992Z', '__v': 0}, {'_id': '683f509d848708bda9c6fbec', 'name': 'ofxqidzmsn', 'description': 'teste', 'price': 4389, 'quantity': 853, 'category': {'_id': '6830b2dfe070c0790342e8c0', 'name': 'Eletrônicos e Computadores'}, 'createdAt': '2025-06-03T19:44:29.903Z', '__v': 0}]</msg>
+<arg>Produtos da categoria de ID ${ID_CATEGORIA}: ${DATA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<doc>Lista produtos pertencentes a uma categoria específica usando o ID da categoria.
+Verifica se o status da resposta é 200 OK e se a resposta contém uma lista de produtos para a categoria.</doc>
+<status status="PASS" start="2025-06-04T19:50:11.983789" elapsed="1.204544"/>
+</kw>
+<kw name="Buscar produto não cadastrado" owner="produtos">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">${ID_PRODUTO_ALEATORIO} = 8495420084</msg>
+<var>${ID_PRODUTO_ALEATORIO}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.188333" level="INFO">ID de Produto aleatório para busca: 8495420084</msg>
+<arg>ID de Produto aleatório para busca: ${ID_PRODUTO_ALEATORIO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.000000"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-06-04T19:50:13.328023" level="INFO">GET Request : url=https://educational-api-production.up.railway.app/api/products/8495420084 
+ path_url=/api/products/8495420084 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-04T19:50:13.328023" level="INFO">GET Response : url=https://educational-api-production.up.railway.app/api/products/8495420084 
+ status=404, reason=Not Found 
+ headers={'Access-Control-Allow-Origin': '*', 'Content-Length': '38', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 04 Jun 2025 18:50:12 GMT', 'Etag': 'W/"26-supjH2XfY3nE+5+3FL4+sgpb4cI"', 'Server': 'railway-edge', 'X-Powered-By': 'Express', 'X-Railway-Edge': 'railway/europe-west4-drams3a', 'X-Railway-Request-Id': 'xdxJnBQDQR-yuyMn0-QtfA'} 
+ body={"message":"Produto não encontrado."} 
+ </msg>
+<msg time="2025-06-04T19:50:13.328023" level="INFO">${RESPONSE} = &lt;Response [404]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${URL_API}/products/${ID_PRODUTO_ALEATORIO}</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.139690"/>
+</kw>
+<if>
+<branch type="IF" condition="${RESPONSE.status_code} == 404">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.343221" level="INFO">${RESPONSE_BODY} = {'message': 'Produto não encontrado.'}</msg>
+<var>${RESPONSE_BODY}</var>
+<arg>${RESPONSE.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-04T19:50:13.343221" level="INFO">{'message': 'Produto não encontrado.'}</msg>
+<arg>${RESPONSE_BODY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-04T19:50:13.343221" level="INFO">${MESSAGE} = Produto não encontrado.</msg>
+<var>${MESSAGE}</var>
+<arg>${RESPONSE_BODY}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Produto não encontrado.</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-06-04T19:50:13.343221" elapsed="0.000000"/>
+</if>
+<doc>Tenta buscar um produto utilizando um ID que não existe na base de dados.
+Gera um ID aleatório para garantir que não exista.
+Verifica se o status da resposta é 404 Not Found e se a mensagem de erro esperada é retornada.</doc>
+<status status="PASS" start="2025-06-04T19:50:13.188333" elapsed="0.154888"/>
+</kw>
+<doc>Esta suíte executa uma sequência completa de testes para a funcionalidade de Produtos.
+Ele abrange o ciclo de vida de um produto, incluindo:
+- Criação de um novo produto (cenário de sucesso e falha por campos obrigatórios ausentes).
+- Busca de produtos (por ID existente e ID inexistente, listagem de todos, e listagem por categoria).
+- Atualização de um produto existente.
+- Exclusão de um produto.
+O objetivo é garantir a correta interação com os endpoints de Produtos da API.</doc>
+<tag>produtos</tag>
+<status status="PASS" start="2025-06-04T19:50:07.779950" elapsed="5.563271"/>
+</test>
+<doc>Este módulo de testes abrange a funcionalidade de gerenciamento de Produtos da API.
+Ele verifica as operações de criação, listagem, busca por ID, atualização e exclusão de produtos,
+garantindo que a API se comporte conforme o esperado para cada cenário, incluindo casos de sucesso e falha.
+O objetivo é validar a integridade e a disponibilidade dos endpoints de Produtos.</doc>
+<status status="PASS" start="2025-06-04T19:50:06.769166" elapsed="6.574055"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">produtos</stat>
+</tag>
+<suite>
+<stat name="Produtos" id="s1" pass="1" fail="0" skip="0">Produtos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
