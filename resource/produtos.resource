@@ -1,4 +1,7 @@
 *** Settings ***
+Documentation    Este arquivo contém as Keywords personalizadas para a funcionalidade de Produtos da API.
+...              Ele define as operações de baixo nível para interagir com os endpoints de produtos.
+
 Library    RequestsLibrary
 Library    JSONLibrary
 Library    Collections
@@ -11,7 +14,9 @@ ${PRODUCTS_ENDPOINT}    /products
 
 *** Keywords ***
 Cadastrar um novo produto
-    Criar Sessão da API
+    [Documentation]    Cria um novo produto enviando um payload JSON válido para o endpoint /products.
+    ...                Gera nome, descrição, preço e quantidade aleatórios e associa a um ID de categoria existente.
+
     ${ID_CATEGORIA}=    Obter ID de uma categoria existente
     Log    ${ID_CATEGORIA}
 
@@ -47,7 +52,9 @@ Cadastrar um novo produto
     END
 
 Buscar produto cadastrado por ID
-    Criar Sessão da API
+    [Documentation]    Busca um produto específico utilizando o ID previamente cadastrado (variável ID Produto).
+    ...                Verifica se o status da resposta é 200 OK e se a resposta contém os detalhes do produto na chave 'data'.
+    
     Log    ${ID_PRODUTO} 
     ${RESPONSE}=    GET    ${URL_API}/products/${ID_PRODUTO}  expected_status=200
 
@@ -58,7 +65,10 @@ Buscar produto cadastrado por ID
     Log    Produto por ID: ${DATA}
 
 Atualizar produto cadastrado
-    Criar Sessão da API
+    [Documentation]    Atualiza a descrição e quantidade de um produto existente usando o ID previamente cadastrado (ID Produto).
+    ...                Remove campos como 'name', 'price' e 'category' do payload para testar a atualização parcial.
+    ...                Verifica se o status da resposta é 200 OK e se a resposta reflete as informações atualizadas.
+    
     ${JSON_PRODUTOS}=    Load Json From File    ${PATH_PAYLOAD}/produtos.json 
     Remove From Dictionary    ${JSON_PRODUTOS}    name
     Remove From Dictionary    ${JSON_PRODUTOS}    price
@@ -77,7 +87,9 @@ Atualizar produto cadastrado
     Log    Produto atualizado: ${DATA}
 
 Excluir produto cadastrado
-    Criar Sessão da API
+    [Documentation]    Exclui um produto existente utilizando o ID previamente cadastrado (ID Produto).
+    ...                Verifica se o status da resposta é 200 OK e se a resposta de sucesso contém a mensagem e o status 'success' esperados.
+    
     ${RESPONSE}=    DELETE    ${URL_API}/products/${ID_PRODUTO}    expected_status=200
     Log    ${RESPONSE}
 
@@ -95,7 +107,9 @@ Excluir produto cadastrado
     Should Be True    ${SUCCESS}    
 
 Listar todas os produtos cadastrados
-    Criar Sessão da API
+    [Documentation]    Lista todos os produtos disponíveis na API.
+    ...                Verifica se o status da resposta é 200 OK e se a resposta contém uma lista de produtos na chave 'data'.
+    
     ${RESPONSE}=    GET    ${URL_API}/products    expected_status=200
 
     ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
@@ -105,9 +119,11 @@ Listar todas os produtos cadastrados
     Log    Produtos cadastrados: ${DATA}
 
 Cadastrar produto sem preço e quantidade
-    Criar Sessão da API
+    [Documentation]    Tenta cadastrar um novo produto sem fornecer os campos 'price' e 'quantity' no payload.
+    ...                Verifica se o status da resposta é 400 Bad Request e se a mensagem de erro esperada é retornada.
+
     ${ID_CATEGORIA}=    Obter ID de uma categoria existente
-    Log    ${ID_CATEGORIA}
+    Log    ID da Categoria utilizada: ${ID_CATEGORIA}
 
     ${JSON_PRODUTOS}=    Load Json From File    ${PATH_PAYLOAD}/produtos.json    # Carrega meu payload
   
@@ -137,9 +153,11 @@ Cadastrar produto sem preço e quantidade
     END
 
 Listar produtos por ID de uma categoria
-    Criar Sessão da API
+    [Documentation]    Lista produtos pertencentes a uma categoria específica usando o ID da categoria.
+    ...                Verifica se o status da resposta é 200 OK e se a resposta contém uma lista de produtos para a categoria.
+    
     ${ID_CATEGORIA}=    Obter ID de uma categoria existente
-    Log    ${ID_CATEGORIA}
+    Log    ID da Categoria para listagem: ${ID_CATEGORIA}
 
     ${RESPONSE}=    GET    ${URL_API}/products/category/${ID_CATEGORIA}  expected_status=200
 
@@ -152,11 +170,13 @@ Listar produtos por ID de uma categoria
     Log    Produtos da categoria de ID ${ID_CATEGORIA}: ${DATA}
 
 Buscar produto não cadastrado
-    Criar Sessão da API
+    [Documentation]    Tenta buscar um produto utilizando um ID que não existe na base de dados.
+    ...                Gera um ID aleatório para garantir que não exista.
+    ...                Verifica se o status da resposta é 404 Not Found e se a mensagem de erro esperada é retornada.
 
     ${ID_PRODUTO_ALEATORIO}    Generate Random String    length=10    chars=[NUMBERS]
 
-    Log    ${ID_PRODUTO_ALEATORIO} 
+    Log    ID de Produto aleatório para busca: ${ID_PRODUTO_ALEATORIO} 
     ${RESPONSE}=    GET    ${URL_API}/products/${ID_PRODUTO_ALEATORIO}  expected_status=404
 
     IF    ${RESPONSE.status_code} == 404
