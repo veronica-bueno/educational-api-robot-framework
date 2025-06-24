@@ -6,7 +6,7 @@ Library    Collections
 Library    String
 
 *** Variables ***
-${URL_API}       https://educational-api-production.up.railway.app/api
+${URL_API}       https://educational-api-75qy.onrender.com/api
 ${PATH_PAYLOAD}   ${EXECDIR}/config/payload
 ${SSL_VERIFY}           False  # Nova variável para controle SSL
 
