@@ -5,8 +5,8 @@
 Este projeto contém testes de automação para uma API pública, desenvolvidos utilizando Robot Framework.
 
 A API possui documentação conforme URLs abaixo:
-- [Educational API - Swagger](https://educational-api-production.up.railway.app/api-docs/)
-- [Educational API - JSON](https://educational-api-production.up.railway.app/swagger.json)
+- [Educational API - Swagger](https://educational-api-75qy.onrender.com/api-docs/)
+- [Educational API - JSON](https://educational-api-75qy.onrender.com/swagger.json)
 
 #### Requisitos para Configuração e Execução
 Para configurar e executar os testes de API neste projeto, siga os passos abaixo:
