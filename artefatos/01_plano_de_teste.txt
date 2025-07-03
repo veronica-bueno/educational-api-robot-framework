@@ -28,8 +28,8 @@
     Python: Linguagem de programação base para o Robot Framework e suas bibliotecas.
 
 Ambiente
-    API Testada: https://educational-api-production.up.railway.app/api-docs
-    JSON: https://educational-api-production.up.railway.app/swagger.json
+    API Testada: https://educational-api-75qy.onrender.com/api-docs/
+    JSON: https://educational-api-75qy.onrender.com/swagger.json
 
 
 QA Responsável
