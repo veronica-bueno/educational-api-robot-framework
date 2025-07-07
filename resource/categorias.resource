@@ -122,7 +122,7 @@ Obter ID de uma categoria existente
 
     RETURN    ${ID_PRIMEIRA_CATEGORIA}
 
-Cadastrar categoria sem nome
+Tentativa de cadastrar uma categoria sem nome
     [Documentation]    Tenta cadastrar uma nova categoria sem fornecer o campo 'name' no payload.
     ...                Verifica se o status da resposta é 400 Bad Request e se a mensagem de erro esperada é retornada.
 
@@ -146,7 +146,7 @@ Cadastrar categoria sem nome
         Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e descrição.
     END
 
-Buscar categoria não cadastrada
+Tentativa de buscar uma categoria não cadastrada
     [Documentation]    Tenta buscar uma categoria utilizando um ID que não existe na base de dados.
     ...                Verifica se o status da resposta é 404 Not Found e se a mensagem de erro esperada é retornada.
 

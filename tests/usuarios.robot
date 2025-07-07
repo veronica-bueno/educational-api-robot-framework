@@ -25,5 +25,5 @@ Usuários
     Buscar usuário cadastrado por ID
     Excluir usuário cadastrado
     Listar todos os usuarios cadastrados
-    Cadastrar usuário sem nome
-    Buscar usuário não cadastrado
+    Tentativa de cadastrar usuário sem nome
+    Tentativa de buscar usuário não cadastrado

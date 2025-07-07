@@ -112,7 +112,7 @@ Listar todas os produtos cadastrados
     ${DATA}=    Get From Dictionary    ${RESPONSE_BODY}    data
 
 
-Cadastrar produto sem preço e quantidade
+Tentativa de cadastrar produto sem preço e quantidade
     [Documentation]    Tenta cadastrar um novo produto sem fornecer os campos 'price' e 'quantity' no payload.
     ...                Verifica se o status da resposta é 400 Bad Request e se a mensagem de erro esperada é retornada.
 
@@ -159,7 +159,7 @@ Listar produtos por ID de uma categoria
     ${DATA}=    Get From Dictionary    ${RESPONSE_BODY}    data
 
 
-Buscar produto não cadastrado
+Tentativa de buscar produto não cadastrado
     [Documentation]    Tenta buscar um produto utilizando um ID que não existe na base de dados.
     ...                Gera um ID aleatório para garantir que não exista.
     ...                Verifica se o status da resposta é 404 Not Found e se a mensagem de erro esperada é retornada.

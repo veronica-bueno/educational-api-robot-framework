@@ -27,7 +27,7 @@ Produtos
     Atualizar produto cadastrado
     Excluir produto cadastrado
     Listar todas os produtos cadastrados
-    Cadastrar produto sem preço e quantidade
+    Tentativa de cadastrar produto sem preço e quantidade
     Listar produtos por ID de uma categoria
-    Buscar produto não cadastrado
+    Tentativa de buscar produto não cadastrado
     

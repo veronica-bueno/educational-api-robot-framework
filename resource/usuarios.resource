@@ -86,7 +86,7 @@ Listar todos os usuarios cadastrados
     ${DATA}=    Get From Dictionary    ${RESPONSE_BODY}    data
 
     
-Cadastrar usuário sem nome
+Tentativa de cadastrar usuário sem nome
     [Documentation]    Tenta cadastrar um novo usuário sem fornecer o campo 'name' no payload.
     ...                Verifica se o status da resposta é 400 Bad Request e se a mensagem de erro esperada é retornada.
     
@@ -108,7 +108,7 @@ Cadastrar usuário sem nome
         Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e email.
     END
 
-Buscar usuário não cadastrado
+Tentativa de buscar usuário não cadastrado
     [Documentation]    Tenta buscar um usuário utilizando um ID que não existe na base de dados.
     ...                Gera um ID aleatório para garantir que não exista.
     ...                Verifica se o status da resposta é 404 Not Found e se a mensagem de erro esperada é retornada.

@@ -25,6 +25,6 @@ Categorias
     Atualizar categoria cadastrada
     Excluir categoria cadastrada
     Listar todas as categorias cadastradas
-    Cadastrar categoria sem nome
-    Buscar categoria não cadastrada
+    Tentativa de cadastrar uma categoria sem nome
+    Tentativa de buscar uma categoria não cadastrada
     
