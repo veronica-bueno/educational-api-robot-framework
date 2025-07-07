@@ -25,11 +25,10 @@ Cadastrar um novo usuário
    
     Set To Dictionary    ${JSON_USUARIOS}    name=${PALAVRA_ALEATORIA}
     Set To Dictionary    ${JSON_USUARIOS}    email=${PALAVRA_ALEATORIA}@emailteste.com
-    Log    Json enviado: ${JSON_USUARIOS}
+
 
     ${RESPONSE}=    POST On Session    API    ${USERS_ENDPOINT}    json=${JSON_USUARIOS}
-    Log    Status code: ${RESPONSE.status_code}
-    Log    Response content: ${RESPONSE.content}
+
 
     Status Should Be    201    ${RESPONSE}
     
@@ -47,25 +46,25 @@ Buscar usuário cadastrado por ID
     [Documentation]    Busca um usuário específico utilizando o ID previamente cadastrado (variável ID Usuários).
     ...                Verifica se o status da resposta é 200 OK e se a resposta contém os detalhes do usuário na chave 'data'.
     
-    Log    ID do usuário a buscar: ${ID_USUARIO} 
+
     ${RESPONSE}=    GET    ${URL_API}/users/${ID_USUARIO}  expected_status=200
 
     ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
-    Log    ${RESPONSE_BODY}
+
     Dictionary Should Contain Key    ${RESPONSE_BODY}    data
     ${DATA}=    Get From Dictionary    ${RESPONSE_BODY}    data
-    Log    Usuário por ID: ${DATA}
+
 
 Excluir usuário cadastrado
     [Documentation]    Exclui um usuário existente utilizando o ID previamente cadastrado (variável ID Usuários).
     ...                Verifica se o status da resposta é 200 OK e se a resposta de sucesso contém a mensagem e o status 'success' esperados.
    
     ${RESPONSE}=    DELETE    ${URL_API}/users/${ID_USUARIO}    expected_status=200
-    Log    ${RESPONSE}
+
 
     # Confirmar que usuário foi deletado
     ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
-    Log    ${RESPONSE_BODY}
+
 
     Dictionary Should Contain Key    ${RESPONSE_BODY}    message
     Dictionary Should Contain Key    ${RESPONSE_BODY}    success
@@ -86,7 +85,6 @@ Listar todos os usuarios cadastrados
     Dictionary Should Contain Key    ${RESPONSE_BODY}    data
     ${DATA}=    Get From Dictionary    ${RESPONSE_BODY}    data
 
-    Log    Usuários cadastrados: ${DATA}
     
 Cadastrar usuário sem nome
     [Documentation]    Tenta cadastrar um novo usuário sem fornecer o campo 'name' no payload.
@@ -99,15 +97,12 @@ Cadastrar usuário sem nome
    
     Set To Dictionary    ${JSON_USUARIOS}    email=${PALAVRA_ALEATORIA}@emailteste.com
     Remove From Dictionary  ${JSON_USUARIOS}        name    # Remove o campo 'name' para simular a ausência
-    Log    Json enviado: ${JSON_USUARIOS}
 
     ${RESPONSE}=    POST On Session    API    ${USERS_ENDPOINT}    json=${JSON_USUARIOS}    expected_status=400
-    Log    Status code: ${RESPONSE.status_code}
-    Log    Response content: ${RESPONSE.content}
-  
+
     IF    ${RESPONSE.status_code} == 400
         ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
-        Log    ${RESPONSE_BODY}
+
         Dictionary Should Contain Key    ${RESPONSE_BODY}    message
         ${MESSAGE}=    Get From Dictionary    ${RESPONSE_BODY}    message
         Should Be Equal    ${MESSAGE}    Por favor, preencha todos os campos obrigatórios: nome e email.
@@ -125,7 +120,7 @@ Buscar usuário não cadastrado
 
     IF    ${RESPONSE.status_code} == 404
         ${RESPONSE_BODY}=    Set Variable    ${RESPONSE.json()}
-        Log    ${RESPONSE_BODY}
+        
         Dictionary Should Contain Key    ${RESPONSE_BODY}    message
         ${MESSAGE}=    Get From Dictionary    ${RESPONSE_BODY}    message
         Should Be Equal    ${MESSAGE}    Usuário não encontrado.
